@@ -31,4 +31,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_API_KEY }}
     - 
       name: Docker Push
-      run: docker push $(echo $DOCKER_IMAGE_NAME)
+      run: docker push ${DOCKER_IMAGE_NAME}
