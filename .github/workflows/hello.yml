@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_IMAGE_NAME: pzalejko/spring-boot-native-example-with-github-actions
-      DOCKER_IMAGE_TAG: $GITHUB_RUN_NUMBER
 
     steps:
     - 
@@ -23,7 +22,7 @@ jobs:
         java-version: '17'
     - 
       name: Build with Maven
-      run: mvn clean -Pnative spring-boot:build-image -Dspring-boot.build-image.imageName=$(echo $DOCKER_IMAGE_NAME):$(echo $DOCKER_IMAGE_TAG) --file demo/pom.xml
+      run: mvn clean -Pnative spring-boot:build-image -Dspring-boot.build-image.imageName=$(echo $DOCKER_IMAGE_NAME):$(echo $GITHUB_RUN_NUMBER) --file demo/pom.xml
     -
       name: Login to Docker Hub
       uses: docker/login-action@v2
@@ -32,4 +31,4 @@ jobs:
         password: ${{ secrets.DOCKERHUB_API_KEY }}
     - 
       name: Docker Push
-      run: docker push $(echo $DOCKER_IMAGE_NAME):$(echo $DOCKER_IMAGE_TAG)
+      run: docker push $(echo $DOCKER_IMAGE_NAME):$(echo $GITHUB_RUN_NUMBER)
