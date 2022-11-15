@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_IMAGE_NAME: pzalejko/spring-boot-native-example-with-github-actions
-      DOCKER_IMAGE_TAG: $(echo $GITHUB_RUN_NUMBER)
+      DOCKER_IMAGE_TAG: $GITHUB_RUN_NUMBER
 
     steps:
     - 
