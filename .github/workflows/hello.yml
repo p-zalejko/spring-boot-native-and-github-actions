@@ -32,3 +32,12 @@ jobs:
     - 
       name: Docker Push
       run: docker push $(echo $DOCKER_IMAGE_NAME):$(echo $GITHUB_RUN_NUMBER)
+
+    - name: update helm chart
+      run: |
+        sed -i 's/tag:.*/tag: "$(echo $GITHUB_RUN_NUMBER)"/g' spring-boot-native-and-github-actions-helm/values.yaml
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
