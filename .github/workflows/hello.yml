@@ -36,6 +36,12 @@ jobs:
     - name: update helm chart
       run: |
         sed -i 's/tag:.*/tag: "$(echo $GITHUB_RUN_NUMBER)"/g' spring-boot-native-and-github-actions-helm/values.yaml
+        
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -am "Update helm chart (an image version)"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
