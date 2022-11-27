@@ -35,7 +35,7 @@ jobs:
 
     - name: update helm chart
       run: |
-        sed -i 's/tag:.*/tag: '$GITHUB_RUN_NUMBER'/g' spring-boot-native-and-github-actions-helm/values.yaml
+        sed -i 's/tag:.*/tag: '$GITHUB_RUN_NUMBER'/g' helm_chart/values.yaml
         
     - name: Commit files
       run: |
