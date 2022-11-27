@@ -1,7 +1,21 @@
-# spring-boot-native-and-github-actions
-[![CI](https://github.com/p-zalejko/spring-boot-native-and-github-actions/actions/workflows/hello.yml/badge.svg)](https://github.com/p-zalejko/spring-boot-native-and-github-actions/actions/workflows/hello.yml)
+## Usage
+(https://helm.sh/docs/howto/chart_releaser_action/)
 
-A spring boot native application built with github actions.
+[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
+Helm's [documentation](https://helm.sh/docs) to get started.
 
-# Workflow
-Go to the `.github/workflows/hello.yml` file for details.
+Once Helm has been set up correctly, add the repo as follows:
+
+  helm repo add <alias> https://p-zalejko.github.io/helm-charts
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages.  You can then run `helm search repo
+<alias>` to see the charts.
+
+To install the <chart-name> chart:
+
+    helm install my-<chart-name> <alias>/<chart-name>
+
+To uninstall the chart:
+
+    helm delete my-<chart-name>
