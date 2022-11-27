@@ -8,7 +8,7 @@ image:
   repository: pzalejko/spring-boot-native-example-with-github-actions
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 22
+  tag: 25
 
 imagePullSecrets: []
 nameOverride: ""
