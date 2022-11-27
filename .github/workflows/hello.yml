@@ -35,7 +35,7 @@ jobs:
 
     - name: update helm chart
       run: |
-        sed -i 's/tag:.*/tag: '$GITHUB_RUN_NUMBER'/g' helm_chart/values.yaml
+        sed -i 's/tag:.*/tag: '$GITHUB_RUN_NUMBER'/g' charts/demo/values.yaml
         
     - name: Commit files
       run: |
@@ -48,3 +48,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+
+    - name: Run chart-releaser
+      uses: helm/chart-releaser-action@v1.1.0
+      env:
+        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
