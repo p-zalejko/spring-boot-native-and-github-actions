@@ -36,6 +36,7 @@ jobs:
     - name: update helm chart
       run: |
         sed -i 's/tag:.*/tag: '$GITHUB_RUN_NUMBER'/g' charts/demo/values.yaml
+        sed -i 's/version:.*/version: 0.1.'$GITHUB_RUN_NUMBER'/g' charts/demo/Chart.yaml
         
     - name: Commit files
       run: |
