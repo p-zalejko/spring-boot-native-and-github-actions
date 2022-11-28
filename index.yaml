@@ -3,6 +3,16 @@ entries:
   spring-boot-native-and-github-actions-helm:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-11-28T20:05:14.224447772Z"
+    description: A Helm chart for Kubernetes
+    digest: 699aacd8e09408d284c81dddcd3a05130a4748bd2780eb58837d4acdbd36e270
+    name: spring-boot-native-and-github-actions-helm
+    type: application
+    urls:
+    - https://github.com/p-zalejko/spring-boot-native-and-github-actions/releases/download/spring-boot-native-and-github-actions-helm-0.1.27/spring-boot-native-and-github-actions-helm-0.1.27.tgz
+    version: 0.1.27
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-11-27T20:12:56.394238986Z"
     description: A Helm chart for Kubernetes
     digest: cf6aafb42e617cf1b0a2ee239d98f1ff19abed1b1114d6e8492d2e83fd2e1d63
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/p-zalejko/spring-boot-native-and-github-actions/releases/download/spring-boot-native-and-github-actions-helm-0.1.0/spring-boot-native-and-github-actions-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-27T20:12:56.2461271Z"
+generated: "2022-11-28T20:05:14.224462372Z"
